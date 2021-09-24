@@ -1,0 +1,112 @@
+@use '../themes/defaultTheme' as *;
+@use '../util/variables' as *;
+@use '../util/mixins' as *;
+
+.navbar {
+  background: $white;
+  box-shadow: $light-shadow;
+  .nav-center {
+    .nav-header {
+      @include flex-center;
+      justify-content: space-between;
+      padding: 1rem;
+    }
+    .nav-toggle {
+      font-size: 1.5rem;
+      color: $primary-4;
+      background: transparent;
+      border-color: transparent;
+      transition: $transition;
+      cursor: pointer;
+    }
+    .logo {
+      height: 30px;
+    }
+    .links-container {
+      height: 0;
+      overflow: hidden;
+      &.show {
+        height: auto;
+      }
+    }
+    .links li {
+      color: $grey-2;
+      font-size: 1rem;
+      text-transform: capitalize;
+      letter-spacing: $spacing;
+      display: block;
+      padding: 0.5rem 1rem;
+      transition: $transition;
+      position: relative;
+      &::after{
+        @include pseudo;
+        position: absolute;
+        bottom: 0;
+        width: 0;
+        height: 3px;
+        background: $primary-4;
+        transition: 1s ease-out all;
+      }
+    }
+  }
+}
+@include tablet {
+  .navbar {
+    
+    .nav-center {
+      max-width: 1200px;
+      @include center-auto;
+      @include flex-space-bet;
+      padding: 1rem;
+      .logo {
+        height: 40px;
+      }
+
+      .nav-header {
+        padding: 0;
+      }
+      .nav-toggle {
+        display: none;
+      }
+      .links-container {
+        height: auto;
+      }
+      .links {
+        display: flex;
+        li {
+          padding: 0;
+          margin: 0 0.5rem;
+          &:hover {
+            background: $primary-6;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-top: .5rem;
+            padding-bottom: .5rem;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+
+.dropdown{
+  overflow: hidden;
+}
+
+.dropdown-content {
+  display: block;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  a{
+    float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  }
+}

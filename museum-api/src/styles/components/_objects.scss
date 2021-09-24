@@ -1,0 +1,72 @@
+@use "../themes/defaultTheme" as *;
+@use "../util/variables" as *;
+@use "../util/mixins" as *;
+
+.articles {
+  width: 80vw;
+  .article {
+    background: whitesmoke;
+    border-radius: .75rem;
+    place-items: center;
+    @include flex-center;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+
+h3.title {
+  border-radius: 1rem;
+  text-align: center;
+  background: $secondary-4;
+  color: $white;
+  width: 50%;
+  margin-top: 1.5rem;
+  text-decoration: underline;
+  box-shadow: $dark-shadow;
+}
+
+.title-div{
+  @include flex-center
+
+}
+
+.extra-info {
+  text-align: center;
+  padding: 1rem;
+  h3,
+  h4,
+  p {
+    color: $white;
+  }
+}
+
+.article-info {
+  background: $grey-4;
+  border-radius: 2rem;
+  width: 90%;
+  padding: 1rem;
+}
+.loading {
+  $spinner-grad: linearGradient($grey-4, $primary-4);
+  @include box(100px);
+  // @include center-auto;
+  border: 3px solid $grey-8;
+  border-top-color: $primary-4;
+  border-radius: 50%;
+  animation: loading 0.6s ease infinite;
+  margin-top: 2rem;
+
+  @keyframes loading {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+@include large {
+  // .movies{
+  //   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  // }
+}

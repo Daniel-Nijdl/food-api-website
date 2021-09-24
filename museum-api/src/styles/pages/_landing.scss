@@ -1,0 +1,29 @@
+@use '../themes/defaultTheme' as *;
+@use '../util/variables' as *;
+@use '../util/mixins' as *;
+
+.background-cover{
+  background: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+}
+.title{
+  color: $white;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: $radius;
+  padding: 1rem;
+  // text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff0000, 0 0 40px 	#ff0000, 0 0 50px 	#ff0000, 0 0 60px 	#ff0000, 0 0 70px #ff0000;
+}
+.searchpage-btn{
+  background: $white;
+}
+
+.searchpage-btn{
+  size: 20%;
+  a {
+    &:visited {
+      color: red;
+    }
+  }
+}
+
